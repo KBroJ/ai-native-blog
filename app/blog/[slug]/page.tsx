@@ -2,6 +2,8 @@ import { notFound } from 'next/navigation'
 import { CustomMDX } from 'app/components/mdx'
 import { formatDate, getBlogPosts } from 'app/blog/utils'
 import { baseUrl } from 'app/sitemap'
+import { getAuthor } from 'app/lib/authors'
+import { AuthorProfile } from 'app/components/author-profile'
 
 export async function generateStaticParams() {
   let posts = getBlogPosts()
@@ -60,6 +62,8 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     notFound()
   }
 
+  const author = getAuthor(post.metadata.author)
+
   return (
     <section>
       <script
@@ -79,7 +83,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
             url: `${baseUrl}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: 'My Portfolio',
+              name: author.name,
             },
           }),
         }}
@@ -95,6 +99,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
       <article className="prose">
         <CustomMDX source={post.content} />
       </article>
+      <AuthorProfile author={author} />
     </section>
   )
 }
