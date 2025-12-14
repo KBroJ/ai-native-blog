@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh pr:*)",
+      "Bash(gh api:*)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "mcp__atlassian__getAccessibleAtlassianResources",
+      "mcp__atlassian__search",
+      "mcp__atlassian__getVisibleJiraProjects",
+      "mcp__atlassian__searchJiraIssuesUsingJql",
+      "mcp__atlassian__atlassianUserInfo",
+      "Bash(gh:*)",
+      "Bash(wsl --version:*)",
+      "Bash(tmux:*)",
+      "Bash(wsl --list:*)",
+      "Bash(wsl:*)",
+      "Bash(grep:*)"
+    ]
+  }
+}
