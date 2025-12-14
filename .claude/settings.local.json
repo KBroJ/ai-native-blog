@@ -9,7 +9,13 @@
       "mcp__atlassian__search",
       "mcp__atlassian__getVisibleJiraProjects",
       "mcp__atlassian__searchJiraIssuesUsingJql",
-      "mcp__atlassian__atlassianUserInfo"
+      "mcp__atlassian__atlassianUserInfo",
+      "Bash(gh:*)",
+      "Bash(wsl --version:*)",
+      "Bash(tmux:*)",
+      "Bash(wsl --list:*)",
+      "Bash(wsl:*)",
+      "Bash(grep:*)"
     ]
   }
 }
